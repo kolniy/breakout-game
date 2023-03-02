@@ -101,4 +101,17 @@ function initBricks() {
 
 function ballHitBrick(ball, brick) {
   brick.kill();
+  score += 10;
+  scoreText.setText(`Points: ${score}`);
+
+  let count_alive = 0;
+  for (let i = 0; i < bricks.childern.length; i++) {
+    if (bricks.children[i].alive) {
+      count_alive++;
+    }
+  }
+  if (count_alive === 0) {
+    alert("You won the game, congratulations!");
+    location.reload();
+  }
 }
