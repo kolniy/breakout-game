@@ -178,6 +178,7 @@ function ballLeaveScreen() {
 
 function ballHitPaddle(ball, paddle) {
   ball.animations.play("wobble");
+  ball.body.velocity.x = -5 * (paddle.x - ball.x);
 }
 
 function startGame() {
